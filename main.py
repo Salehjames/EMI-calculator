@@ -30,20 +30,44 @@ def def_start():
             firstclick1 = False
             e1.delete(0, "end") # delete all the text in the entry
 
-    def on_e2_click(event):
-        """function that gets called whenever entry2 is clicked"""
-        global firstclick2
-        if firstclick2:
-            firstclick2 = False
-            e2.delete(0, "end")
+def on_e2_click(event):
+    """function that gets called whenever entry2 is clicked"""
+    global firstclick2
+    if firstclick2:
+        firstclick2 = False
+        e2.delete(0, "end")
 
-    e1 = Entry(window, width=30, font=("Arial", 15))
-    e1.insert(0, 'Enter Loan Amount')
-    e1.bind('<FocusIn>', on_el_click)
+def on_e3_click(event):
+    """function that gets called whenever entry3 is clicked"""
+    global firstclick3
+    if firstclick3:   # if this is the first time they clicked  it
+        firstclick3 = False
+        e3.delete(0, "end")  # delete all the text on the entry
 
-    e2 = Entry(window, width=30, font=("Arial", 15))
-    e2.insert(0, 'Enter Interest Rate')
-    e2.bind('<FocusIn>', on_e2_click)
+def on_e4_click(event):
+    """function that gets called whenever entry4 is clicked"""
+    global firstclick4
+    if firstclick4:   # if this is the first time they clicked it
+        firstclick4 = False
+        e4.delete(0, "end")  # delete all the text on the entry
 
-    def on_e3_click(event):
-        """function that gets called whenever entry3 is clicked"""
+def on_e5_click(event):
+    """function that gets called whenever entry5 is clicked"""
+    global firstclick5
+    if firstclick5:   # if this is the first time they clicked it
+        firstclick5 = False
+        e5.delete(0, "end")  # delete all the text on the entry
+
+def on_e6_click(event):
+    """function that gets called whenever entry6 is clicked"""
+    global firstclick6
+    if firstclick6:    # if this is the first time they clicked it
+        firstclick6 = False
+        e6.delete(0, "end")  # delete all the text on the entry
+
+# function for generating and saving the PDF
+def def_PDF():
+    pdf = FPDF(orientation="p", unit="mm", format="A4")
+    pdf.add_page()
+    pdf.set_font("helvetica", "", 20)
+    
