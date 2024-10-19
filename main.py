@@ -180,5 +180,23 @@ def def_PDF():
     panel = tk.Label(window, image=img1)
     panel.place(x=200, y=140)
 
+# created start button
+    startb = Button(window, text="START", command=def_start, font=("Arial", 30), bg="light green", fg="blue", borderwidth=3, relief="raised")
+    startb.place(x=100, y=580)
 
+    # created EMI button
+    emib = Button(window, text="EMI INFO", command=def_emi, font=("Arial", 30), bg="orange", fg="blue", borderwidth=3, relief="raised")
+    emib.place(x=390, y=580)
+
+    # function for exiting
+    def exit_win():
+        if mbox.askokcancel("Exit", "Do you want to exit?"):
+            window.destroy()
+
+    # created exit button
+    exitb = Button(window, text="EXIT", command=exit_win, font=("Arial", 30), bg="red", fg="blue", borderwidth=3, relief="raised")
+    exitb.place(x=730, y=580)
+
+    window.protocol("WM_DELETE_WINDOW", exit_win)
+    window.mainloop()
     
