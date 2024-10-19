@@ -112,4 +112,73 @@ def def_PDF():
     e1.bind('', on_e1_click)
     e1.place(x=300, y=143)
 
+# created entry for Mobile No
+    l2 = Label(f1, text='Mobile No.', font=("Arial", 25), fg="brown")
+    l2.place(x=100, y=200)
+    e2 = Entry(f1, width=30, border=2, font=("Arial", 22), bg="light yellow")
+    e2.insert(0, 'Enter Your Contact...')
+    e2.bind('', on_e2_click)
+    e2.place(x=300, y=203)
+
+    # created entry for Email ID
+    l3 = Label(f1, text='Email Id', font=("Arial", 25), fg="brown")
+    l3.place(x=100, y=260)
+    e3 = Entry(f1, width=30, border=2, font=("Arial", 22), bg="light yellow")
+    e3.insert(0, 'Enter Your Email Id...')
+    e3.bind('', on_e3_click)
+    e3.place(x=300, y=263)
+
+    # created entry for Loan Amount
+    l4 = Label(f1, text='Loan Amount', font=("Arial", 25), fg="brown")
+    l4.place(x=100, y=380)
+    e4 = Entry(f1, width=30, border=2, font=("Arial", 22), bg="light yellow")
+    e4.insert(0, 'Enter Your Loan Amount...')
+    e4.bind('', on_e4_click)
+    e4.place(x=400, y=383)
+
+    # created entry for Interest Per Annum
+    l5 = Label(f1, text='Interest Per Annum', font=("Arial", 25), fg="brown")
+    l5.place(x=100, y=440)
+    e5 = Entry(f1, width=30, border=2, font=("Arial", 22), bg="light yellow")
+    e5.insert(0, 'Enter Your Interest Per Annum...')
+    e5.bind('', on_e5_click)
+    e5.place(x=400, y=443)
+
+    # created entry for Period In Months
+    l6 = Label(f1, text='Period In Months', font=("Arial", 25), fg="brown")
+    l6.place(x=100, y=500)
+    e6 = Entry(f1, width=30, border=2, font=("Arial", 22), bg="light yellow")
+    e6.insert(0, 'Enter Your Period In Months...')
+    e6.bind('', on_e6_click)
+    e6.place(x=400, y=503)
+
+    # created button for calculate EMI
+    calb = Button(window, text="CALCULATE EMI", command=def_cal, font=("Arial", 20), bg="light green", fg="blue", borderwidth=3, relief="raised")
+    calb.place(x=80, y=590)
+
+    # created button for user details
+    userb = Button(window, text="USER DETAILS", command=def_details, font=("Arial", 20), bg="orange", fg="blue", borderwidth=3, relief="raised")
+    userb.place(x=390, y=590)
+
+    # created button for generating PDF
+    pdfb = Button(window, text="GENERATE PDF", command=def_PDF, font=("Arial", 20), bg="red", fg="blue", borderwidth=3, relief="raised")
+    pdfb.place(x=700, y=590)
+
+    # function for showing EMI INFO
+    def def_emi():
+        mbox.showinfo("EMI INFO", "EMI, which stands for Equated Monthly Installment, is the monthly amount payments we make towards a loan we opted for.\n\nEMI payments include contributions towards both principal and interest on the loan amount.\n\nThe mathematical formula to calculate EMI is: EMI = P × r × (1 + r)n/((1 + r)n - 1) where P= Loan amount, r= interest rate, n=tenure in number of months.")
+
+    # top label
+    start1 = tk.Label(text="EMI CALCULATOR", font=("Arial", 50), fg="magenta")
+    start1.place(x=180, y=10)
+
+    # image on the main window
+    path = "Images/emi_front.jpg"
+    # Creates a Tkinter-compatible photo image, which can be used everywhere Tkinter expects an image object.
+    img1 = ImageTk.PhotoImage(Image.open(path))
+    # The Label widget is a standard Tkinter widget used to display a text or image on the screen.
+    panel = tk.Label(window, image=img1)
+    panel.place(x=200, y=140)
+
+
     
